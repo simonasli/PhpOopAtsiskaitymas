@@ -1,0 +1,15 @@
+{
+  "name": "simonas.linkis/php-oop-atsiskaitymas",
+  "autoload": {
+    "psr-4": {
+      "SimonasLinkis\\PhpOopAtsiskaitymas\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Simonas Linkis",
+      "email": "simas.linkis@gmail.com"
+    }
+  ],
+  "require": {}
+}

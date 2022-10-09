@@ -1,0 +1,48 @@
+h1, h2 {
+    color: #be911e;
+    text-align: center;
+}
+
+fieldset {
+    width: 65rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.user_input {
+    width: 30rem;
+}
+
+.pvz {
+    font-weight: bold;
+}
+
+.red_text {
+    color: darkblue;
+}
+
+table {
+    text-align: center;
+    background: lightseagreen;
+    border: 2px solid darkslategray;
+    width: 80rem;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+thead {
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid grey;
+}
+
+.below {
+    margin: 1rem;
+}
+
+.below_buttons {
+    display: flex;
+    justify-content: center;
+}

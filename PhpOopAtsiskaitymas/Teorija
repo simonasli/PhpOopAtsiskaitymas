@@ -1,0 +1,189 @@
+1.
+Kuo skiriasi abstrakti klasė nuo įprastos? Įvardinkite du pagrindinius skirtumus/savybes?
+
+Abstrakti klasė naudojama paveldėjimui, klasės kurios paveldi abstrakčias klases turi turėti aprašytus
+abstrakčius metodus iš abstrakčios klasės.
+ - Pagrindiniai skirtumai tai, kad abstrakti klasė turi
+  abstrakčius metodus kuriuos paveldi paveldinčioji klasė.
+ - Žodis abstract prieš class.
+ - Pirma aprašoma vaikinė klasė kuri implementuos, paveldės abstrakčius metodus, tik po to aprašoma
+  abstrakti klasė.
+ - Abstrakti klasė negali būti inicializuota, o vaikinė klasė gali.
+
+2.
+Kokie yra PHP metodų/savybių matomumo lygiai. Trumpai juos aprašykite.
+
+Matomumo lygiai gali būti: private, public, protected, šie pavadinimai yra parašomi prieš function
+ arba savybės tipą.
+- su private matomumo lygiu metodas arba savybė prieinami tik klasės viduje.
+- klasės išorėje galime kviesti tik public metodus
+- su protected tipu metodai ir savybės taip pat kaip ir private nėra prieinami klasės išorėje, tačiau protected
+metodai ar savybės gali būti paveldimi vaikinės klasės.
+
+3.
+Kokia yra keyword’o “break” paskirtis? Kur jis dažniausiai naudojamas?
+
+Naudojamas išeiti iš for loop, foreach loop, do..while loop, arba switch condition.
+Leidžia užbaigti ciklą nebaigus loopinti per visus narius.
+Dažniausiai naudojamas switch operacijoje, po kiekviena salyga (case) ir tos salygos rezultatu
+prieš prasidedant naujam case.
+
+4.
+Kokia yra keyword’o “continue” paskirtis? Kur jis dažniausiai yra naudojamas?
+
+Naudojamas loop operacijose, leidžia praleista likusia darbinio ciklo iteracijos dalį ir peršokti i sekančią
+iteraciją, ir taip būtų tęsiamas vykdymas.
+
+5.
+Įvardinkinte jums žinomas su slaptažodžių hash’avimu susijusias PHP funkcijas. Trumpai paaiškinkite kokia yra jų paskirtis.
+
+funkcija hash();
+į kuria galime paduoti passwordą, kuris bus užhashintas ir paverstas i eilę raidžių ir skaitmenų,
+žinomu tik tai funkcijai, hashinimo pagrindine paskirtis informacijos tokios kaip login duomenys, passwordai,
+asmeninė žmogaus informacija, formose suvedami duomenys ir tt. apsauga.
+
+6.
+Kas yra interfeisas? Trumpai apibūdinkite kam jis yra skirtas?
+
+Interfaisas tai klasės kuri jį implementuos aprašas, kaip turinys palei kurį klasė turės būti aprašyta.
+Interfeise aprašomi implementuojančios klasės public metodai, parametrai ir return tipai, bet be metodų logikos.
+Skirtas programuotojams kuriantiems klases, nurodo kokius metodus konkrečios klasės turi turėti.
+
+7.
+Kas yra extendinama, o kas implementuojama?
+
+extendinama: klasė extendina kitą klasę
+inplementuojama: klasė inplementuoja interfeisą
+
+8.
+Kuo skiriasi klasės statinis kintamasis nuo klasės konstantos?
+
+Konstanto reikšmė negali būti keičiama, statinio kintamojo reikšmė gali keistis.
+Konstantu pavadinimai aprašomi didžiosiomis raidemis be $ ženklo, jeigu pavadinimas susideda
+iš kelių žodžių tai tarp jų yra žemutinis brukšnys.
+Statinės savybės aprašomos su $ ženklu pavadinimas mažosiomis raidemis.
+
+
+9.
+Kokius metodus abstrakčioje klasėje padarome abstrakčiais?
+
+Tuos kuriuos turės aprašyti paveldinčioji klasė.
+
+10.
+Parašykite keletą pavydžių kaip gali būti aprašyta konstanta ir ji iškviesta?
+
+class Speed {
+  public const SPEED_OF_SOUND = 343;
+
+  public function showSpeed(): int {
+  //klasės viduje
+  return self::SPEED_OF_SOUND;
+  }
+}
+klasės išorėje
+echo Speed::SPEED_OF_SOUND;
+
+
+class Year {
+  public const MONTHS_IN_YEAR = 12;
+
+  public function showNumberOfMonths(): int {
+  //klasės viduje
+  return self::MONTHS_IN_YEAR;
+  }
+}
+
+klasės išorėje
+echo Speed::MONTHS_IN_YEAR;
+
+11.
+Kada yra naudojama static žodelis?
+
+kai norime declaruoti metoda arba savybe kuri bus static, tokioms savybėms ir metodams
+ nereikės inicijuoti objekto.
+
+12.
+Kaip yra objektas perduodas į metodą?
+
+per klasės konstruktoriu paduodamas objectas su kintamojo pavadinimu (private ClassName $name),
+ vėliau toje klasėje esantis metodas gali priimti pačią klasę su žodeliu $this->name->perduotosKlasėsMetodas();
+
+13.
+Kas yra composer?
+
+Tai yra aplikacijų bibliotekos manageris, kuris mums leidžia isidiegti ir panaudoti kitu žmonių parašytas
+programas, jas atnaujinti, patikrinti versijų suderinamuma.
+
+14.
+Parašykite komandas kurias naudosite su composeriu norėdami jį sukonfiguroti,
+kažką parsisiųsti ir jei reikia atnaujinti.
+
+jeigu composeris suinstaliuotas tai -
+paleisti ir sukonfiguruoti: composer init
+kažka parsisiūsti: composer require
+atnaujinti: composer update
+
+15.
+Kas yra dependency injections?
+
+Tai kodo organizavimas kai objectai yra sukuriami išorėje ir paduodami i klasę per metodo argumentus.
+
+16.
+Kuo yra gerai MPA?
+
+Reikalauja Mažiau resursu, greičiau vystoma,
+ir naujiems programuotojams aiškus modelis palei kurį reikia rašyti aplikaciją, kaip ir šiame projekte buvo
+panaudotas šis modelis, taip pat atsidarius kieno nors rašyta kodą viskas aišku kur kas randasi ir kokia
+kieno direktorija ir joje esančių klasių paskirtis. pvz: View directorijoje randasi failai su html
+kurie naudojami atvaizduoti ka vartotojas matys.
+
+17.
+Kam yra skirtas try ir catch blokas? Parašykite pavyzdį
+
+Programos vykdimas sutoja jeigu išmetamas exception
+try catch leidžia sugauti ir apdoroti visus exceptionus ir toliau vykdyti programą
+
+class Work {
+ public function workHours(int $hours): bool{
+   if ($hours !== 8) {
+       throw new Exception('incorrect working hours');
+   }
+ }
+}
+
+try {
+//vykdomas kodas
+    $workingHours = new Work();
+    $workingHours->workHours(7);
+ } catch (Exception $exception) {
+//pagaunamas exceptionas ir nurodoma ką su juo daryti, šiuo atveju bus atvaizduota žinutė
+    echo $exception->getMessage();
+}
+
+18.
+Ar galima klasės konstantas pasiekti globaliame lygyje?
+
+Galima tik public matomumo konstantas
+
+19.
+Kaip vadinasi klasė turinti statinį metodą? Parašykite pavyzdį
+
+class Work {
+ public static function workHours(int $hours): bool{
+   if ($hours !== 8) {
+       throw new Exception('incorrect working hours');
+   }
+ }
+}
+
+try {
+//vykdomas kodas
+    Work::workHours(7);
+ } catch (Exception $exception) {
+//pagaunamas exceptionas ir nurodoma ką su juo daryti, šiuo atveju bus atvaizduota žinutė
+    echo $exception->getMessage();
+}
+
+20.
+Ar protected metodas gali būti pasiekiamas globaliame lygyje?
+Jeigu klasė kurioje yra private metodas yra paveldima tai metodas gali buti pasiektas vaikinės klasės viduje.
